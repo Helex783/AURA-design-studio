@@ -8,9 +8,8 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import WhatsAppFloat from './components/common/WhatsAppFloat';
 import ScrollProgress from './components/common/ScrollProgress';
-import CustomCursor from './components/common/CustomCursor';
-import BackToTop from './components/common/BackToTop';
 import Loader from './components/common/Loader';
+import ScrollToTop from './components/common/ScrollToTop'; // 👈 NEW
 
 // Pages
 import Home from './pages/Home';
@@ -21,7 +20,7 @@ import ServicesPage from './pages/ServicesPage';
 import BlogPage from './pages/BlogPage';
 import BlogDetail from './pages/BlogDetail';
 import Quote from './pages/Quote';
-import QuoteSuccess from './pages/QuoteSuccess'; // ✅ Import success page
+import QuoteSuccess from './pages/QuoteSuccess';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -43,8 +42,9 @@ function App() {
     <Router>
       <div className="font-body antialiased bg-[#0a0a0a] text-[#e0e0e0]">
         <ScrollProgress />
-        <CustomCursor />
+      
         <Navbar />
+        <ScrollToTop /> {/* 👈 ADD THIS – it will scroll to top on every route change */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -54,11 +54,11 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/quote" element={<Quote />} />
-          <Route path="/quote-success" element={<QuoteSuccess />} /> {/* ✅ ADDED */}
+          <Route path="/quote-success" element={<QuoteSuccess />} />
         </Routes>
         <Footer />
         <WhatsAppFloat />
-        <BackToTop />
+      
       </div>
     </Router>
   );
