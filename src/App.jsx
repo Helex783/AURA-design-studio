@@ -45,7 +45,7 @@ function App() {
     <Router>
       <div className="font-body antialiased bg-[#0a0a0a] text-[#e0e0e0]">
         <ScrollProgress />
-        <CustomCursor />
+    
         <Navbar />
         
         <Routes>
@@ -61,7 +61,7 @@ function App() {
         </Routes>
         <Footer />
         <WhatsAppFloat />
-        {/* ❌ REMOVE this line: <BackToTop /> */}
+      
       </div>
     </Router>
   );
